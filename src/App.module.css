@@ -1,0 +1,29 @@
+.action{
+    max-width: 30rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.action button{
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #54433A;
+    border: 1px solid #54433A;
+    color: #ffe8d6;
+}
+
+.action button:hover,
+.action button:active{
+    background-color: #553b2c;
+    border: 1px solid #553b2c;
+}
+
+.action select{
+    font: inherit;
+    font-weight: bold;
+    padding: 0.5rem 3rem;
+    border-radius: 6px;
+}
