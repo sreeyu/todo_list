@@ -1,11 +1,15 @@
 import React from "react";
 import styles from './TodoForm.module.css';
 
-function TodoForm(){
+function TodoForm(props){
+
+    const closeForm = () =>{
+        props.onClose(false);
+    };
 
     return(
        <div className={styles.container}>
-        <button className={styles.cancel}>x</button>
+        <button className={styles.cancel} onClick={closeForm} >x</button>
             <form className={styles.form} >
                 <div>
                     <label htmlFor="">Task:</label>
@@ -18,7 +22,7 @@ function TodoForm(){
                         <option value="">Incomplete</option>
                     </select>
                 </div>
-                <button>Add</button>
+                <button >Add</button>
             </form>
        </div>
     );
