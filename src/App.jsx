@@ -1,6 +1,13 @@
 import React, {useState} from "react";
 import styles from './App.module.css'
 import TodoForm from "./components/TodoForm/TodoForm";
+import TodoList from "./components/TodoList/TodoList";
+
+const DUMMY_TODO = [
+  {id: 't1', status:'complete', task: 'Learn JavaScript'},
+  {id: 't2', status: 'incomplete', task: 'Go for a walk'},
+  {id:'t3', status:'incomplete', task: 'Stretch for an hour'}
+]
 
 function App() {
 
@@ -22,6 +29,7 @@ function App() {
         </select>
       </div>
       {showForm && <TodoForm onClose={setShowForm} />}
+      <TodoList tasks={DUMMY_TODO} />
     </div>
   );
 };
