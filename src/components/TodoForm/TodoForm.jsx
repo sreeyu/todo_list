@@ -21,8 +21,7 @@ function TodoForm(props){
 
     const getFormValues = (event) => {
         event.preventDefault();
-        console.log(todo);
-        console.log(status);
+        props.onAdd(todo, status)
         closeForm();
     }
 
