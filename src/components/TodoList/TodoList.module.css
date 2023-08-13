@@ -1,0 +1,37 @@
+.list{
+    list-style: none;
+    background-color: #93664D;
+    max-width: 30rem;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.todo{
+    background-color: #FFE8D2;
+    max-width: 80%;
+    margin: 1rem auto;
+    padding: 1rem;
+    color: #93664D;
+    font-weight: bold;
+    border-radius: 0.5rem;
+}
+
+/*
+.list{
+    background-color: #93664D;
+    max-width: 30%;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.todo{
+    background-color: #FFE8D2;
+    list-style: none;
+    margin: 1rem;
+    padding: 1rem;
+    color: #93664D;
+    font-weight: bold;
+    border-radius: 0.5rem;
+} */

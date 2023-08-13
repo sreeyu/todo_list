@@ -7,7 +7,7 @@ const DUMMY_TODO = [
   {id: 't1', status:'complete', task: 'Learn JavaScript'},
   {id: 't2', status: 'incomplete', task: 'Go for a walk'},
   {id:'t3', status:'incomplete', task: 'Stretch for an hour'}
-]
+];
 
 function App() {
 
