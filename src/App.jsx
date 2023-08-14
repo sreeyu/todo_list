@@ -4,9 +4,9 @@ import TodoForm from "./components/TodoForm/TodoForm";
 import TodoList from "./components/TodoList/TodoList";
 
 const DUMMY_TODO = [
-  {id: 't1', status:'complete', task: 'Learn JavaScript'},
-  {id: 't2', status: 'incomplete', task: 'Go for a walk'},
-  {id:'t3', status:'incomplete', task: 'Stretch for an hour'}
+  {id: 't1', status:'Complete', task: 'Learn JavaScript'},
+  {id: 't2', status: 'Incomplete', task: 'Go for a walk'},
+  {id:'t3', status:'Incomplete', task: 'Stretch for an hour'}
 ];
 
 function App() {

@@ -15,23 +15,82 @@
     color: #93664D;
     font-weight: bold;
     border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
 }
 
-/*
-.list{
-    background-color: #93664D;
-    max-width: 30%;
-    margin: 2rem auto;
-    padding: 2rem;
-    border-radius: 1rem;
-}
-
-.todo{
-    background-color: #FFE8D2;
-    list-style: none;
-    margin: 1rem;
-    padding: 1rem;
+.todo input{
+    cursor: pointer;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
     color: #93664D;
-    font-weight: bold;
-    border-radius: 0.5rem;
-} */
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0.15em solid #93664D;
+    border-radius: 0.15rem;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+.todo input::before{
+    content: "";
+    width: 0.65rem;
+    height: 0.65rem;
+    transform: scale(0);
+    transition: 120ms trasform ease-in-out;
+    box-shadow: inset 1rem 1rem var(--form-control-color);
+    background-color: #93664D;
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.todo input:checked::before{
+    transform: scale(1);
+}
+
+.writing{
+    text-align: left;
+    
+}
+
+.writing h3{
+    margin: 0;
+    padding: 0;
+}
+
+.writing p{
+    margin: 0;
+    padding: 0;
+}
+
+.buttons button{
+    background-color: #93664D;
+    border: 1px solid #93664D;
+    margin: 0.1rem;
+    border-radius: 0.2rem;
+}
+
+.buttons button:active,
+.buttons button:hover{
+    background-color: #aa8673;
+    border: 1px solid #aa8673;
+}
+
+@media (max-width: 768px){
+    .list{
+        padding: 0.5rem 0;
+       
+    }
+    .todo{
+        padding: 0.5rem;
+        
+    }
+
+    .buttons{
+        display: flex;
+        flex-direction: column;
+    }
+}
