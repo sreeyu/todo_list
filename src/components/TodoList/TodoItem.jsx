@@ -5,6 +5,10 @@ import styles from './TodoItem.module.css';
 
 function TodoItem(props){
 
+    const deleteTodoItem = () =>{
+        props.onDelete(props.id);
+    }
+
     return(
         <li className={styles.todo} >
             <input type="checkbox" />
@@ -15,7 +19,7 @@ function TodoItem(props){
             </div>
 
             <div className={styles.buttons}>
-                <button><MdOutlineDeleteOutline size={20} /></button>
+                <button onClick={deleteTodoItem}><MdOutlineDeleteOutline size={20} /></button>
                 <button ><MdOutlineModeEditOutline size={20} /></button>
             </div>
         </li>

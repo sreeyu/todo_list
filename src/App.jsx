@@ -26,6 +26,13 @@ function App() {
       return taskList;
     })
   }
+
+  const deleteTodo = (todoId) =>{
+    setTodoList(prevList => {
+      const taskList = prevList.filter(task => task.id !== todoId);
+      return taskList;
+    })
+  }
   
   return (
     <div className={styles.app} >
@@ -43,7 +50,7 @@ function App() {
       
       {showForm && <TodoForm onClose={setShowForm} onAdd={getNewTodo} />}
       
-      <TodoList tasks={todoList} />
+      <TodoList tasks={todoList} onDelete={deleteTodo} />
     </div>
   );
 };
