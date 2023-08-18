@@ -9,9 +9,14 @@ function TodoItem(props){
         props.onDelete(props.id);
     }
 
+    const changeStatus = () => {
+        let newStatus = props.status === 'Complete' ? 'Incomplete' : 'Complete';
+        props.onCheck(props.id, newStatus)
+    }
+
     return(
         <li className={styles.todo} >
-            <input type="checkbox" />
+            <input type="checkbox" onChange={changeStatus} checked={props.status === 'Complete'} />
 
             <div className={styles.writing} >
                 <h3>{props.children}</h3>

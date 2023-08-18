@@ -33,6 +33,18 @@ function App() {
       return taskList;
     })
   }
+
+  const updateStatus = (todoId, updatedStatus) =>{
+    setTodoList(prevList => {
+      const taskList = prevList.map(task => {
+        if(task.id === todoId){
+          return {...task, status: updatedStatus}
+        }
+        return task
+      })
+      return taskList;
+    })
+  }
   
   return (
     <div className={styles.app} >
@@ -50,7 +62,7 @@ function App() {
       
       {showForm && <TodoForm onClose={setShowForm} onAdd={getNewTodo} />}
       
-      <TodoList tasks={todoList} onDelete={deleteTodo} />
+      <TodoList tasks={todoList} onDelete={deleteTodo} onCheck={updateStatus} />
     </div>
   );
 };
