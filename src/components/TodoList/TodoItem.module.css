@@ -70,6 +70,10 @@
     border: 1px solid #aa8673;
 }
 
+.complete{
+    text-decoration: line-through;
+}
+
 @media (max-width: 768px){
     .todo{
         padding: 0.5rem;

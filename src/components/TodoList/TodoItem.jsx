@@ -14,12 +14,14 @@ function TodoItem(props){
         props.onCheck(props.id, newStatus)
     }
 
+    const taskClass = props.status === 'Complete' ? `${styles.complete}` : '';
+
     return(
         <li className={styles.todo} >
             <input type="checkbox" onChange={changeStatus} checked={props.status === 'Complete'} />
 
             <div className={styles.writing} >
-                <h3>{props.children}</h3>
+                <h3 className={taskClass} >{props.children}</h3>
                 <p>Status: {props.status}</p>
             </div>
 
