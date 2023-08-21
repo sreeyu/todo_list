@@ -3,17 +3,12 @@ import styles from './App.module.css'
 import TodoForm from "./components/TodoForm/TodoForm";
 import TodoList from "./components/TodoList/TodoList";
 
-const DUMMY_TODO = [
-  {id: 't1', status:'Complete', task: 'Learn JavaScript'},
-  {id: 't2', status: 'Incomplete', task: 'Go for a walk'},
-  {id:'t3', status:'Incomplete', task: 'Stretch for an hour'}
-];
 
 function App() {
 
   const [showForm, setShowForm] = useState(false);
 
-  const [todoList, setTodoList] = useState(DUMMY_TODO);
+  const [todoList, setTodoList] = useState([]);
 
   const getForm = () =>{
     setShowForm(true);
