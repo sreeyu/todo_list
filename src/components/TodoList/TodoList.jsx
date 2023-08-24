@@ -19,6 +19,11 @@ function TodoList(props){
 
     return(
         <ul className={styles.list} >
+             <select name="All" id="">
+                <option value="All">All</option>
+                <option value="Complete">Complete</option>
+                <option value="Incomplete">Incomplete</option>
+            </select>
             {content}
         </ul>
     );

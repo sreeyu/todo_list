@@ -7,10 +7,6 @@ function TodoForm(props){
 
     const [status, setStatus] = useState('incomplete');
 
-    const closeForm = () =>{
-        props.onClose(false);
-    };
-
     const getTodo = (event) =>{
         setTodo(event.target.value);
     }
@@ -22,16 +18,14 @@ function TodoForm(props){
     const getFormValues = (event) => {
         event.preventDefault();
         props.onAdd(todo, status)
-        closeForm();
+        setTodo('');
     }
 
     return(
-       <div className={styles.container}>
-        <button className={styles.cancel} onClick={closeForm} >x</button>
             <form className={styles.form} onSubmit={getFormValues} >
                 <div>
                     <label htmlFor="task">Task:</label>
-                    <input type="text" id="task" onChange={getTodo} />
+                    <input value={todo} type="text" id="task" onChange={getTodo} />
                 </div>
                 <div>
                     <label htmlFor="status">Status:</label>
@@ -43,7 +37,6 @@ function TodoForm(props){
                 </div>
                 <button >Add</button>
             </form>
-       </div>
     );
 };
 

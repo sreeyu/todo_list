@@ -7,6 +7,13 @@
     padding: 1rem;
 }
 
+.list select{
+    font: inherit;
+    font-weight: bold;
+    padding: 0.5rem 3rem;
+    border-radius: 6px;
+}
+
 @media (max-width: 768px){
     .list{
         padding: 0.5rem 0;

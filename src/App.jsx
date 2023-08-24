@@ -6,13 +6,7 @@ import TodoList from "./components/TodoList/TodoList";
 
 function App() {
 
-  const [showForm, setShowForm] = useState(false);
-
   const [todoList, setTodoList] = useState([]);
-
-  const getForm = () =>{
-    setShowForm(true);
-  };
 
   const getNewTodo = (newTodo, todoStatus) => {
     setTodoList(prevList => {
@@ -46,16 +40,9 @@ function App() {
       <h1>ToDo App</h1>
       
       <div className={styles.action} >
-        <button onClick={getForm} >Add Task</button>
-        
-        <select name="All" id="">
-          <option value="All">All</option>
-          <option value="Complete">Complete</option>
-          <option value="Incomplete">Incomplete</option>
-        </select>
+        <TodoForm onAdd={getNewTodo} />
+       
       </div>
-      
-      {showForm && <TodoForm onClose={setShowForm} onAdd={getNewTodo} />}
       
       <TodoList tasks={todoList} onDelete={deleteTodo} onCheck={updateStatus} />
     </div>
