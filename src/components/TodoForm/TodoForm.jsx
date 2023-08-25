@@ -17,8 +17,14 @@ function TodoForm(props){
 
     const getFormValues = (event) => {
         event.preventDefault();
-        props.onAdd(todo, status)
-        setTodo('');
+
+        if(todo.trim().length === 0){
+            return
+        }
+        else{
+            props.onAdd(todo, status)
+            setTodo('');
+        }
     }
 
     return(
