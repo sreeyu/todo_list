@@ -5,7 +5,7 @@ function TodoForm(props){
 
     const [todo, setTodo] = useState('');
 
-    const [status, setStatus] = useState('incomplete');
+    const [status, setStatus] = useState('Incomplete');
 
     const getTodo = (event) =>{
         setTodo(event.target.value);
@@ -36,8 +36,8 @@ function TodoForm(props){
                 <div>
                     <label htmlFor="status">Status:</label>
                     <select name="status" id="status" onChange={getStatus}>
-                        <option value="incomplete">Incomplete</option>
-                        <option value="complete">Complete</option>
+                        <option value="Incomplete">Incomplete</option>
+                        <option value="Complete">Complete</option>
                         
                     </select>
                 </div>

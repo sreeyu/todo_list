@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from './TodoList.module.css';
 import TodoItem from "./TodoItem";
 
 
 function TodoList(props){
+
+    const [selectOption, setSelectOption] = useState('All');
+
+    const getOption = (event) => {
+        setSelectOption(event.target.value)
+    }
+
+    const filterArray = () => {
+        if(selectOption === 'All'){
+            return props.tasks;
+        }
+        else{
+            return props.tasks.filter(task => task.status === selectOption)
+        }
+    }
 
     let content;
 
@@ -11,7 +26,8 @@ function TodoList(props){
         content = <p>No tasks found</p>
     }
     else{
-        content = props.tasks.map((task) => 
+        const filteredArray = filterArray()
+        content = filteredArray.map(task => 
         <TodoItem  key={task.id} status={task.status} id={task.id} onDelete={props.onDelete} onCheck={props.onCheck} >
             {task.task}
         </TodoItem>)
@@ -19,7 +35,7 @@ function TodoList(props){
 
     return(
         <ul className={styles.list} >
-             <select name="All" id="">
+             <select name="All" id="" onChange={getOption}>
                 <option value="All">All</option>
                 <option value="Complete">Complete</option>
                 <option value="Incomplete">Incomplete</option>
